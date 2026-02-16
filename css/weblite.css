@@ -1,0 +1,183 @@
+/*стилі для книжноі орієнтаціі*/
+#weblite {
+  position: relative;
+  background: var(--gradient-7);
+}
+
+
+/*елементи головного банера*/
+#top-banner {
+  height: 10%;
+  position: fixed;
+  top: 0%;
+  flex-direction: row;
+  background: var(--gradient-1);
+  box-shadow: 0 0 2.5vh 2.5vh var(--color-1);
+  border-bottom: var(--border-1);
+  z-index: 99;
+}
+
+#logo-container {
+  width: max-content;
+  height: 80%;
+  flex-direction: row;
+  position: absolute;
+  top: 10%;
+  left: 2vh;
+}
+#logo-img {
+  height: 100%;
+  width: auto;
+  aspect-ratio: 1/1;
+}
+#logo-text {
+  margin: 0 0 0 1vw;
+  background: var(--gradient-10);
+  background-clip: text;
+  color: transparent;
+}
+
+#btn-theme {
+  height: 70%;
+  width: auto;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 15%;
+  right: 2vh;
+  border-radius: 10px;
+  background: var(--gradient-6);
+}
+#img-btn-theme {
+  width: 75%;
+  height: 75%;
+  background-image: url(../img/style/light-theme.svg);
+}
+
+.svg-element {
+  stroke: var(--color-000);
+}
+
+
+/*елементи нижнього банера*/
+#bottom-banner {
+  height: 8%;
+  position: fixed;
+  z-index: 99;
+  bottom: 0%;
+  flex-direction: row;
+  background: var(--gradient-2);
+  justify-content: space-between;
+  backdrop-filter: blur(5px);
+}
+
+.btn-bottom-banner,
+.btn-top-banner {
+  height: 80%;
+  width: auto;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-left: 2%;
+  margin-right: 2%;
+  background: var(--gradient-3);
+}
+.btn-top-banner {
+  display: none;
+}
+
+
+/*активна кнопка*/
+#btn-main-page {
+  background: var(--gradient-5);
+}
+
+.btn-bottom-banner > img,
+.btn-bottom-banner > svg {
+  height: 80%;
+  width: auto;
+  aspect-ratio: 1/1;
+}
+
+#btn-top-page,
+#btn-bottom-page {
+  position: fixed;
+  bottom: 30%;
+  right: 2vh;
+  height: 7%;
+  width: auto;
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+  background: var(--gradient-5);
+  z-index: 9999;
+  cursor: pointer;
+}
+#btn-bottom-page {
+  bottom: 20%;
+}
+#btn-top-page {
+  display: none;
+}
+#btn-top-page > svg,
+#btn-bottom-page > svg {
+  width: 80%;
+  height: 80%;
+  margin: 10%;
+  pointer-events: none;
+}
+
+#content-container {
+  height: 90%;
+  position: absolute;
+  top: 10%;
+  overflow: hidden;
+}
+
+
+
+/*стилі для альбомноі орієнтації*/
+@media (orientation: landscape) {
+  /*bottom banner*/
+  #bottom-banner {
+    display: none;
+    
+  }
+  
+  .btn-top-banner {
+    display: flex;
+  }
+  
+  #content-container {
+    height: 83%;
+    top: 17%;
+  }
+  
+  #btn-top-page,
+  #btn-bottom-page {
+    height: 15%;
+    bottom: 40%;
+  }
+  #btn-bottom-page {
+    bottom: 20%;
+  }
+  
+  
+  /*top banner*/
+  #top-banner {
+    height: 17%;
+  }
+  
+  #logo-container {
+    height: 80%;
+    position: static;
+    margin-left: 2%;
+  }
+  
+  #btn-theme {
+    position: static;
+    height: 80%;
+    margin: 10% 2% 10% auto;
+  }
+}

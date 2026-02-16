@@ -1,0 +1,282 @@
+/*css змінні*/
+/*світла тема*/
+:root {
+  /*обводка головного банера*/
+  --border-1: 2px solid hsla(270, 100%, 70%, 1);
+  /*обводка всього*/
+  --border-2: 2px solid hsla(0, 100%, 80%, 1);
+  
+  --color-000: #000;
+  --color-333: #333;
+  
+  /*тінь банера*/
+  --color-1: hsla(260, 100%, 80%, 0.7);
+  
+  /*головний банер*/
+  --gradient-1: linear-gradient(175deg, hsla(200, 100%, 90%, 1) 0%, hsla(270, 100%, 80%, 1) 90%);
+  
+  /*нижній банер*/
+  --gradient-2: linear-gradient(155deg, hsla(200, 100%, 90%, 0.3) 0%, hsla(260, 100%, 90%, 0.3) 90%);
+  
+  /*фон btn нижнього банера*/
+  --gradient-3: linear-gradient(155deg, hsla(180, 100%, 90%, 1) 0%, hsla(220, 100%, 80%, 1) 100%);
+  
+  /*фон топ та подібного*/
+  --gradient-4: linear-gradient(155deg, hsla(0, 100%, 95%, 1), hsla(300, 100%, 90%, 1));
+  
+  /*фон активних btn нижнього банера, та інших btn*/
+  --gradient-5: linear-gradient(155deg, hsla(200, 100%, 80%, 1) 0%, hsla(270, 100%, 70%, 1) 100%);
+  
+  /*фон к. світла /темна тема*/
+  --gradient-6: linear-gradient(155deg, hsla(0, 100%, 100%, 1) 0%, hsla(0, 100%, 90%, 1) 90%);
+  
+  /*фон всього сайта*/
+  --gradient-7: 
+    radial-gradient(at 50% 50%, hsla(0, 100%, 90%, 0.5) 0%, transparent 70%),
+    linear-gradient(155deg, hsla(0, 100%, 100%, 1), hsla(260, 100%, 100%, 1));
+  
+  /*фон всі права захищені*/
+  --gradient-8: linear-gradient(155deg, hsla(200, 100%, 90%, 1) 0%, hsla(300, 100%, 80%, 1) 90%);
+  
+  /*фон показників аніме*/
+  --gradient-9: linear-gradient(155deg, hsla(0, 100%, 90%, 1) 0%, hsla(300, 100%, 80%, 1) 100%);
+  
+  /*фон логотипа*/
+  --gradient-10: linear-gradient(155deg, hsla(260, 100%, 30%, 1) 0%, hsla(300, 100%, 20%, 1) 100%);
+}
+
+
+/*темна тема*/
+[data-theme="dark"] {
+  /*обводка головного банера*/
+  --border-1: 2px solid hsla(270, 100%, 20%, 1);
+  /*обводка всього*/
+  --border-2: 2px solid hsla(220, 100%, 30%, 1);
+  
+  --color-000: #fff;
+  --color-333: #999;
+  
+  /*тінь банера*/
+  --color-1: hsla(270, 100%, 5%, 1);
+  
+  /*головний банер*/
+  --gradient-1: linear-gradient(175deg, hsla(200, 100%, 20%, 1) 0%, hsla(300, 100%, 10%, 1) 100%);
+  
+  /*нижній банер*/
+  --gradient-2: linear-gradient(155deg, hsla(200, 100%, 20%, 0.3) 0%, hsla(260, 100%, 20%, 0.3) 90%);
+  
+  /*фон btn нижнього банера*/
+  --gradient-3: linear-gradient(155deg, hsla(200, 100%, 30%, 1) 0%, hsla(260, 100%, 20%, 1) 100%);
+  
+  /*фон топ та подібного*/
+  --gradient-4: linear-gradient(155deg, hsla(270, 100%, 10%, 1), hsla(200, 100%, 5%, 1));
+  
+  /*фон активних btn нижнього банера, та інших btn*/
+  --gradient-5: linear-gradient(155deg, hsla(180, 100%, 30%, 1) 0%, hsla(220, 100%, 20%, 1) 100%);
+  
+  /*фон к. світла /темна тема*/
+  --gradient-6: linear-gradient(135deg, hsla(200, 100%, 40%, 1), hsla(270, 100%, 30%, 1));
+  
+  /*фон всього сайта*/
+  --gradient-7: 
+    radial-gradient(at 50% 50%, hsla(200, 100%, 20%, 0.5) 0%, transparent 70%),
+    linear-gradient(155deg, hsla(0, 100%, 0%, 1), hsla(260, 100%, 0%, 1));
+  
+  /*фон всі права захищені*/
+  --gradient-8: linear-gradient(155deg, hsla(200, 100%, 20%, 1) 0%, hsla(300, 100%, 10%, 1) 90%);
+  
+  /*фон показників аніме*/
+  --gradient-9: linear-gradient(155deg, hsla(260, 100%, 20%, 1) 0%, hsla(200, 100%, 10%, 1) 100%);
+  
+  /*фон логотипа*/
+  --gradient-10: linear-gradient(155deg, hsla(300, 100%, 80%, 1) 0%, hsla(200, 100%, 80%, 1) 100%);
+  
+}
+
+
+
+
+/*стилі для книжноі орієнтаціі*/
+html, body, div {
+  width: 100%;
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+}
+
+@font-face {
+    font-family: 'MyCustomFont'; /* Любое имя для шрифта */
+    src: url('944-font.ttf') format('truetype'); /* путь к файлу */
+    font-weight: normal; /* насыщенность */
+    font-style: normal; /* стиль */
+}
+
+* {
+  flex-shrink: 0;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+  color: var(--color-000);
+  stroke: var(--color-000);
+}
+
+h1, h2 {
+  font-family: 'Russo One', sans-serif;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+textarea {
+  resize: none;
+}
+
+.text-125 {
+  font-size: 125%;
+}
+.text-150 {
+  font-size: 150%;
+}
+.text-200 {
+  font-size: 200%;
+}
+
+.text-no-margin {
+  margin: 0;
+}
+
+.theme-content-1 {
+  height: max-content;
+  width: 100%;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: normal;
+  overflow: auto;
+  gap: 5%;
+}
+
+.theme-content-2,
+.theme-content-3 {
+  height: max-content;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+}
+
+.anime-title,
+.anime-score,
+.anime-scored-by,
+.anime-rank,
+.anime-rating,
+.anime-year {
+  margin: auto 5% auto 5%;
+}
+.anime-score,
+.anime-year,
+.anime-rank,
+.anime-rating {
+  background: var(--gradient-9);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  width: max-content;
+  height: max-content;
+  margin: 0;
+  border-radius: 0 5px 0 5px;
+}
+.anime-year {
+  right: auto;
+  left: 0;
+  border-radius: 5px 0 5px 0;
+}
+.anime-rank {
+  top: auto;
+  bottom: 0;
+  border-radius: 5px 0 5px 0;
+}
+.anime-rating {
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: 0;
+}
+
+.anime-container-1 {
+  width: 40vw;
+  height: 100%;
+}
+
+.anime-container-2 {
+  width: 90%;
+  height: 100%;
+  display: block;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.anime-1,
+.anime-2,
+.anime-3 {
+  aspect-ratio: 5/7;
+  border-radius: 10px;
+  border: var(--border-2);
+  position: relative;
+}
+.anime-1,
+.anime-2 {
+  width: 100%;
+  height: auto;
+}
+.anime-3 {
+  width: 70%;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.anime-1:hover,
+.anime-2:hover,
+.anime-3:hover {
+  transform: scale(0.95);
+}
+
+.container-all-law-protected {
+  height: 20vh;
+  width: 100vw;
+  background: var(--gradient-8);
+  border-top: var(--border-2);
+}
+.text-all-law-protected {
+  color: var(--color-333);
+  margin: 10%;
+}
+
+/*стилі для альбомноі орієнтаціі*/
+@media (orientation: landscape) {
+  .theme-content-1 {
+    width: 97.5%;
+    gap: 2.5%;
+  }
+  
+  .theme-content-2,
+  .theme-content-3 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+  }
+  
+  .anime-container-1 {
+    width: 20vw;
+  }
+}

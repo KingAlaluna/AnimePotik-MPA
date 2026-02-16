@@ -1,0 +1,40 @@
+.container-sort-anime {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  height: max-content;
+}
+
+#container-sort-year {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.btn-sort {
+  width: 90%;
+  min-height: 5vh;
+  max-height: max-content;
+  border-radius: 10px;
+  margin: 1.5vw 0 1.5vw 5%;
+  background: var(--gradient-3);
+  overflow-wrap: break-word;
+}
+.btn-sort:hover {
+  background: var(--gradient-5) !important;
+  transform: scale(0.9);
+}
+
+/*для альбомногл режиму*/
+@media (orientation: landscape) {
+  .container-sort-anime {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  #container-sort-year {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  
+  .btn-sort {
+    min-height: 10vh;
+    margin: 1vw 0 1vw 5%;
+  }
+}

@@ -1,0 +1,13 @@
+#page-weblite-detalis,
+#page-my-project {
+  overflow: auto;
+  justify-content: flex-start;
+  align-items: normal;
+  padding: 5vmin 5vw 5vmin 5vw;
+}
+
+
+#page-weblite-detalis > .container-all-law-protected,
+#page-my-project > .container-all-law-protected {
+  margin: 5vmin -5vw -5vmin -5vw;
+}
