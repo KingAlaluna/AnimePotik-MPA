@@ -140,7 +140,7 @@ function animeFor(animeArray, containers, version) {
 
     // html аніме
     container.innerHTML = `
-      <div class="anime-${version || 1} all-anime" style="background-image: url('${anime.images.jpg.image_url}')">
+      <div class="anime-${version || 1} all-anime" style="background-image: url('${anime.images.webp.image_url}')">
         <div class="anime-score">${score}</div>
         <div class="anime-year">${anime.year || ''}</div>
         <div class="anime-rank">${rank}</div>

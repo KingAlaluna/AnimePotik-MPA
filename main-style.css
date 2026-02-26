@@ -1,109 +1,4 @@
-/*css змінні*/
-/*світла тема*/
-:root {
-  /*обводка головного банера*/
-  --border-1: 2px solid hsla(270, 100%, 70%, 1);
-  /*обводка всього*/
-  --border-2: 2px solid hsla(0, 100%, 80%, 1);
-  
-  --color-000: #000;
-  --color-333: #333;
-  
-  /*тінь банера*/
-  --color-1: hsla(260, 100%, 80%, 0.7);
-  
-  /*головний банер*/
-  --gradient-1: linear-gradient(175deg, hsla(200, 100%, 90%, 1) 0%, hsla(270, 100%, 80%, 1) 90%);
-  
-  /*нижній банер*/
-  --gradient-2: linear-gradient(155deg, hsla(200, 100%, 90%, 0.3) 0%, hsla(260, 100%, 90%, 0.3) 90%);
-  
-  /*фон btn нижнього банера*/
-  --gradient-3: linear-gradient(155deg, hsla(180, 100%, 90%, 1) 0%, hsla(220, 100%, 80%, 1) 100%);
-  
-  /*фон топ та подібного*/
-  --gradient-4: linear-gradient(155deg, hsla(0, 100%, 95%, 1), hsla(300, 100%, 90%, 1));
-  
-  /*фон активних btn нижнього банера, та інших btn*/
-  --gradient-5: linear-gradient(155deg, hsla(200, 100%, 80%, 1) 0%, hsla(270, 100%, 70%, 1) 100%);
-  
-  /*фон к. світла /темна тема*/
-  --gradient-6: linear-gradient(155deg, hsla(0, 100%, 100%, 1) 0%, hsla(0, 100%, 90%, 1) 90%);
-  
-  /*фон всього сайта*/
-  --gradient-7: 
-    radial-gradient(at 50% 50%, hsla(0, 100%, 90%, 0.5) 0%, transparent 70%),
-    linear-gradient(155deg, hsla(0, 100%, 100%, 1), hsla(260, 100%, 100%, 1));
-  
-  /*фон всі права захищені*/
-  --gradient-8: linear-gradient(155deg, hsla(200, 100%, 90%, 1) 0%, hsla(300, 100%, 80%, 1) 90%);
-  
-  /*фон показників аніме*/
-  --gradient-9: linear-gradient(155deg, hsla(0, 100%, 90%, 1) 0%, hsla(300, 100%, 80%, 1) 100%);
-  
-  /*фон логотипа*/
-  --gradient-10: linear-gradient(155deg, hsla(260, 100%, 30%, 1) 0%, hsla(300, 100%, 20%, 1) 100%);
-}
-
-
-/*темна тема*/
-[data-theme="dark"] {
-  /*обводка головного банера*/
-  --border-1: 2px solid hsla(270, 100%, 20%, 1);
-  /*обводка всього*/
-  --border-2: 2px solid hsla(220, 100%, 30%, 1);
-  
-  --color-000: #fff;
-  --color-333: #999;
-  
-  /*тінь банера*/
-  --color-1: hsla(270, 100%, 5%, 1);
-  
-  /*головний банер*/
-  --gradient-1: linear-gradient(175deg, hsla(200, 100%, 20%, 1) 0%, hsla(300, 100%, 10%, 1) 100%);
-  
-  /*нижній банер*/
-  --gradient-2: linear-gradient(155deg, hsla(200, 100%, 20%, 0.3) 0%, hsla(260, 100%, 20%, 0.3) 90%);
-  
-  /*фон btn нижнього банера*/
-  --gradient-3: linear-gradient(155deg, hsla(200, 100%, 30%, 1) 0%, hsla(260, 100%, 20%, 1) 100%);
-  
-  /*фон топ та подібного*/
-  --gradient-4: linear-gradient(155deg, hsla(270, 100%, 10%, 1), hsla(200, 100%, 5%, 1));
-  
-  /*фон активних btn нижнього банера, та інших btn*/
-  --gradient-5: linear-gradient(155deg, hsla(180, 100%, 30%, 1) 0%, hsla(220, 100%, 20%, 1) 100%);
-  
-  /*фон к. світла /темна тема*/
-  --gradient-6: linear-gradient(135deg, hsla(200, 100%, 40%, 1), hsla(270, 100%, 30%, 1));
-  
-  /*фон всього сайта*/
-  --gradient-7: 
-    radial-gradient(at 50% 50%, hsla(200, 100%, 20%, 0.5) 0%, transparent 70%),
-    linear-gradient(155deg, hsla(0, 100%, 0%, 1), hsla(260, 100%, 0%, 1));
-  
-  /*фон всі права захищені*/
-  --gradient-8: linear-gradient(155deg, hsla(200, 100%, 20%, 1) 0%, hsla(300, 100%, 10%, 1) 90%);
-  
-  /*фон показників аніме*/
-  --gradient-9: linear-gradient(155deg, hsla(260, 100%, 20%, 1) 0%, hsla(200, 100%, 10%, 1) 100%);
-  
-  /*фон логотипа*/
-  --gradient-10: linear-gradient(155deg, hsla(300, 100%, 80%, 1) 0%, hsla(200, 100%, 80%, 1) 100%);
-  
-}
-
-
-
-
 /*стилі для книжноі орієнтаціі*/
-html, body, div {
-  width: 100%;
-  height: 100%;
-  padding: 0%;
-  margin: 0%;
-}
-
 @font-face {
     font-family: 'MyCustomFont'; /* Любое имя для шрифта */
     src: url('944-font.ttf') format('truetype'); /* путь к файлу */
@@ -122,6 +17,13 @@ html, body, div {
   stroke: var(--color-000);
 }
 
+html, body, div {
+  width: 100%;
+  height: 100%;
+  padding: 0%;
+  margin: 0%;
+}
+
 h1, h2 {
   font-family: 'Russo One', sans-serif;
 }
@@ -131,6 +33,7 @@ div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 button {
@@ -240,7 +143,7 @@ textarea {
   height: auto;
 }
 .anime-3 {
-  width: 70%;
+  width: 90%;
   height: auto;
   margin: 0 auto;
   margin-bottom: 40px;
@@ -253,7 +156,7 @@ textarea {
 }
 
 .container-all-law-protected {
-  height: 20vh;
+  height: clamp(150px, 20vh, 200px);
   width: 100vw;
   background: var(--gradient-8);
   border-top: var(--border-2);

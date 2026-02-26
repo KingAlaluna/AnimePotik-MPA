@@ -1,4 +1,5 @@
-const banners = `
+//верхній (головний) банер;
+const topBanner = `
     <!--banner top-->
     <div id="top-banner">
       
@@ -8,6 +9,8 @@ const banners = `
       </div>
       
       
+      <!--кониейнер всіх кнопок головного банера-->
+      <div id="cont-btn-main-banner">
       <div id="btn-theme">
         <button id="img-btn-theme"></button>
       </div>
@@ -51,14 +54,32 @@ const banners = `
           <path class="svg-element" d="M8 9c0-2 1.5-3.5 3.5-3.5S16 7 16 9c0 2.5-3 3-4 4.5V15m0 3v0" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
+      </div>
       
     </div>
     
+
     
     
+    <!--btn scroll page-->
+    <a id="btn-top-page">
+      <svg class="svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12,19 12,5 M5,12 12,5 19,12" />
+      </svg>
+    </a>
     
     
+    <a id="btn-bottom-page">
+      <svg class="svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12,19 12,5 M5,12 12,19 19,12" />
+      </svg>
+    </a>
     
+`;
+
+
+//нижній банер
+const bottomBanner = `
     <!--banner bottom-->
     <div id="bottom-banner">
     
@@ -101,21 +122,5 @@ const banners = `
       </button>
       
     </div>
-    
-    
-    
-    <!--btn scroll page-->
-    <a id="btn-top-page">
-      <svg class="svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12,19 12,5 M5,12 12,5 19,12" />
-      </svg>
-    </a>
-    
-    
-    <a id="btn-bottom-page">
-      <svg class="svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12,19 12,5 M5,12 12,19 19,12" />
-      </svg>
-    </a>
     
 `;

@@ -7,23 +7,20 @@
 
 /*елементи головного банера*/
 #top-banner {
-  height: 10%;
-  position: fixed;
-  top: 0%;
+  height: clamp(50px, 10vh, 90px);
   flex-direction: row;
   background: var(--gradient-1);
   box-shadow: 0 0 2.5vh 2.5vh var(--color-1);
   border-bottom: var(--border-1);
   z-index: 99;
+  padding: 0 2.5vw;
+  justify-content: space-between;
 }
 
 #logo-container {
   width: max-content;
   height: 80%;
   flex-direction: row;
-  position: absolute;
-  top: 10%;
-  left: 2vh;
 }
 #logo-img {
   height: 100%;
@@ -31,19 +28,21 @@
   aspect-ratio: 1/1;
 }
 #logo-text {
-  margin: 0 0 0 1vw;
+  margin: 0 0 0 clamp(3px, 1vw, 6px);
   background: var(--gradient-10);
   background-clip: text;
   color: transparent;
+}
+
+#cont-btn-main-banner {
+  width: max-content;
+  flex-direction: row;
 }
 
 #btn-theme {
   height: 70%;
   width: auto;
   aspect-ratio: 1/1;
-  position: absolute;
-  top: 15%;
-  right: 2vh;
   border-radius: 10px;
   background: var(--gradient-6);
 }
@@ -53,17 +52,13 @@
   background-image: url(../img/style/light-theme.svg);
 }
 
-.svg-element {
-  stroke: var(--color-000);
-}
-
 
 /*елементи нижнього банера*/
 #bottom-banner {
-  height: 8%;
+  height: clamp(40px, 8vh, 80px);
   position: fixed;
+  bottom: 0;
   z-index: 99;
-  bottom: 0%;
   flex-direction: row;
   background: var(--gradient-2);
   justify-content: space-between;
@@ -80,8 +75,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  margin-left: 2%;
-  margin-right: 2%;
+  margin: 0 0 0 clamp(10px, 2vw, 15px);
   background: var(--gradient-3);
 }
 .btn-top-banner {
@@ -106,7 +100,7 @@
   position: fixed;
   bottom: 30%;
   right: 2vh;
-  height: 7%;
+  height: clamp(40px, 7vh, 60px);
   width: auto;
   aspect-ratio: 1/1;
   border-radius: 10px;
@@ -129,9 +123,8 @@
 }
 
 #content-container {
-  height: 90%;
-  position: absolute;
-  top: 10%;
+  height: auto;
+  flex: 1;
   overflow: hidden;
 }
 
@@ -142,21 +135,13 @@
   /*bottom banner*/
   #bottom-banner {
     display: none;
-    
   }
   
   .btn-top-banner {
     display: flex;
   }
   
-  #content-container {
-    height: 83%;
-    top: 17%;
-  }
-  
-  #btn-top-page,
-  #btn-bottom-page {
-    height: 15%;
+  #btn-top-page {
     bottom: 40%;
   }
   #btn-bottom-page {
@@ -165,19 +150,15 @@
   
   
   /*top banner*/
-  #top-banner {
-    height: 17%;
-  }
-  
   #logo-container {
     height: 80%;
     position: static;
-    margin-left: 2%;
+    margin: 0 clamp(10px, 2vw, 15px) 0 0;
   }
   
   #btn-theme {
     position: static;
     height: 80%;
-    margin: 10% 2% 10% auto;
+    margin: 0 0 0 clamp(10px, 2vw, 15px);
   }
 }

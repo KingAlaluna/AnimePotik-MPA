@@ -1,6 +1,7 @@
 //додати банера
 const weblite = document.getElementById('weblite');
-weblite.insertAdjacentHTML('afterbegin', banners);
+weblite.insertAdjacentHTML('afterbegin', topBanner);
+weblite.insertAdjacentHTML('beforeend', bottomBanner);
 
 
 //html елементи
