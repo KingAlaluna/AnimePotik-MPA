@@ -1,0 +1,26 @@
+.wrap-nav-btn.bottom {
+  height: 4rem;
+  max-width: calc(100% - 2rem);
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  backdrop-filter: blur(20px);
+  border-radius: 2rem;
+  padding: 0 2rem;
+  align-items: center;
+  display: var(--bottom-nav);
+  
+  &:has(.btn:hover) .btn.active {
+    flex: 1 1 auto;
+    
+    span {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      flex: 1;
+      min-width: 0;
+    }
+  }
+}

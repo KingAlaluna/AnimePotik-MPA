@@ -1,0 +1,147 @@
+* {
+  flex-shrink: 0;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+  color: var(--text);
+  stroke: var(--text);
+}
+
+html, body {
+  width: 100%;
+  height: max-content;
+  min-height: 100%;
+  padding: 0%;
+  margin: 0%;
+}
+
+div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+h1, h2 {
+  font-family: 'Comfortaa', sans-serif;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+
+.btn-span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+  width: max-content;
+  min-width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius);
+  background: var(--btn-bg);
+  cursor: pointer;
+  
+  svg, .img {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  span {
+    display: none;
+  }
+  
+  &:hover {
+    span {
+      display: block;
+    }
+  }
+}
+
+
+.wrap-content {
+  height: max-content;
+  display: grid;
+  grid-template: auto / repeat(var(--columns), 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  
+  .anime-wrap {
+    cursor: pointer;
+  }
+  
+  &.row {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    align-items: start;
+    scroll-snap-type: x mandatory;
+    padding: 1rem 0;
+    width: calc(100% - 2rem);
+    
+    .anime-wrap {
+      width: calc((100% - ((var(--columns) - 1) * 1rem)) / var(--columns));
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+  }
+}
+
+.anime-img,
+.view-anime-poster {
+  aspect-ratio: 5/7;
+  border-radius: var(--radius);
+  border: var(--border);
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.anime-img {
+  border: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+  
+  span {
+    background-color: var(--anime-info-span-bg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    width: max-content;
+    height: max-content;
+    margin: 0;
+    border-radius: 0 var(--radius) 0 var(--radius);
+    
+    &.year {
+      right: auto;
+      left: 0;
+      border-radius: var(--radius) 0 var(--radius) 0;
+    }
+    
+    &.rank {
+      top: auto;
+      bottom: 0;
+      border-radius: var(--radius) 0 0 0;
+    }
+    
+    &.rating {
+      top: auto;
+      right: auto;
+      bottom: 0;
+      left: 0;
+      border-radius: 0 var(--radius) 0 0;
+    }
+  }
+}

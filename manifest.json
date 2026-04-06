@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "lang": "en-EN",
+  "name": "AnimePotik-MPA",
+  "short_name": "AnimePotik",
+  "description": "AnimePotik — це сучасний онлайн-каталог аніме, що працює на базі Jikan API (офіційний сервіс MyAnimeList). Наша система забезпечує пошук аніме в режимі реального часу, надаючи користувачам доступ до величезної бази даних: жанри аніме, рейтинги, дати виходу та студії виробництва. Завдяки повній інтеграції з API, інформація про топ-25 аніме, популярні серіали та новинки завжди залишається актуальною для наших відвідувачів.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "icons": [
+    {
+      "src": "img/my-logo/icon_192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "img/my-logo/icon_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

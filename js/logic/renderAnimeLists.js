@@ -1,76 +1,71 @@
-localStorage.setItem('activeBtn', 'main');
+import {html} from '../data/config.js';
+import {animeList} from '../data/layout/anime-list.js';
 
-//всі данні
-const data = {
-  //аніме
+
+//data
+export const data = {
+  //anime
   serverTopAnime: null,
   serverAnime: null,
   
-  animeType: null,
-  animeYear: null,
-  animeGenre: null,
-  animeStudio: null,
+  anime: {
+    types: null,
+    years: null,
+    genres: null,
+    studios: null,
+  },
   
   querys: null,
   animeSearch: false,
   
   
-  //пагінація
+  //pagination
   paginationPage: 1,
   allPaginationPage: 5,
   paginationAllAnime: 25,
 };
 
 
-//очистити фільтр
-function clearFilter() {
-  data.animeYear = null;
-  data.animeType = null;
-  data.animeGenre = null;
-  data.animeStudio = null;
+//clear filters
+export function clearFilter() {
+  Object.keys(data.anime).forEach(e => {
+    data.anime[e] = null;
+  });
 }
 
 
-
 //аніме топ, рекомендації, та інші списки аніме
-function renderAnimeLists() {
-  //додати секції з аніме
-  const contentContainer = document.getElementById('content-container');
-  contentContainer.insertAdjacentHTML('beforeend', animeSections);
+html.page.insertAdjacentHTML('beforeend', animeList);
+
+
+//html element
+const i = (id) => document.getElementById(id);
+const c = (classis) => document.querySelectorAll(`.${classis}`);
+
+
+export const dom = {
+  //pagination
+  pgBtnLeft: i('pg-btn-left'),
+  pgBtnRight: i('pg-btn-right'),
+  paginationText: i('pagination-text'),
   
   
-  //html елементи
-  const i = (id) => document.getElementById(id);
-  const c = (classis) => document.querySelectorAll(`.${classis}`);
+  //wraps
+  containerTop10Anime: i('container-top-10-anime'),
+  containerRecommendAmine: i('container-recommend-amine'),
   
   
-  const dom = {
-    //пагінація
-    pgBtnLeft: i('pg-btn-left'),
-    pgBtnRight: i('pg-btn-right'),
-    paginationText: i('pagination-text'),
-    
-    
-    //сторінки
-    mainPage: i('main-page'),
-    
-    
-    //контейнери
-    containerTop10Anime: i('container-top-10-anime'),
-    containerRecommendAmine: i('container-recommend-amine'),
-    
-    
-    //текст
-    textTopAnime: i('text-top-anime'),
-    textRecomendAnime: i('text-recommend-anime'),
-  };
-  
-  
-  //
-  //логіка
-  //
-  //пагінація
-function pagTextContent() {
+  //texts
+  textTopAnime: i('text-top-anime'),
+  textRecomendAnime: i('text-recommend-anime'),
+};
+
+
+//
+//logic
+//
+//pagination
+export function pagTextContent() {
   dom.paginationText.textContent = data.paginationPage + ' / ' + data.allPaginationPage;
 }
 pagTextContent();
@@ -83,14 +78,14 @@ async function pagination() {
   
   let url = 'https://api.jikan.moe/v4/anime';
   
-  if (data.animeYear) {
-    url += '?start_date=' + encodeURIComponent(data.animeYear) + '-01-01&end_date=' + encodeURIComponent(data.animeYear) + '-12-31' + '&page=' + encodeURIComponent(data.paginationPage);
-  } else if (data.animeType) {
-    url += '?type=' + encodeURIComponent(data.animeType) + '&page=' + encodeURIComponent(data.paginationPage);
-  } else if (data.animeGenre) {
-    url += '?genres=' + encodeURIComponent(data.animeGenre) + '&page=' + encodeURIComponent(data.paginationPage);
-  } else if (data.animeStudio) {
-    url += '?producers=' + encodeURIComponent(data.animeStudio) + '&page=' + encodeURIComponent(data.paginationPage);
+  if (data.anime.years) {
+    url += '?start_date=' + encodeURIComponent(data.anime.years) + '-01-01&end_date=' + encodeURIComponent(data.anime.years) + '-12-31' + '&page=' + encodeURIComponent(data.paginationPage);
+  } else if (data.anime.types) {
+    url += '?type=' + encodeURIComponent(data.anime.types) + '&page=' + encodeURIComponent(data.paginationPage);
+  } else if (data.anime.genres) {
+    url += '?genres=' + encodeURIComponent(data.anime.genres) + '&page=' + encodeURIComponent(data.paginationPage);
+  } else if (data.anime.studios) {
+    url += '?producers=' + encodeURIComponent(data.anime.studios) + '&page=' + encodeURIComponent(data.paginationPage);
   } else if (data.animeSearch) {
     url += '?q=' + encodeURIComponent(data.querys) + '&page=' + encodeURIComponent(data.paginationPage);
   } else {
@@ -125,10 +120,10 @@ dom.pgBtnRight.addEventListener('click', async () => {
 //показати топ та рекомендації аніме
 //
 //загальна логіка
-function animeFor(animeArray, containers, version) {
+function animeFor(animeArray, containers) {
   animeArray.forEach(anime => {
 
-    // дані
+    // data
     const ratingMatch = anime.rating?.match(/\d+/);
     const rating = ratingMatch ? ratingMatch[0] + '+' : '';
     const score = anime.score ? '★' + anime.score : '';
@@ -136,23 +131,23 @@ function animeFor(animeArray, containers, version) {
 
     // створюємо головний контейнер аніме
     const container = document.createElement('div');
-    container.className = `anime-container-${version || 1}`;
+    container.className = `anime-wrap`;
 
-    // html аніме
+    // html anime
     container.innerHTML = `
-      <div class="anime-${version || 1} all-anime" style="background-image: url('${anime.images.webp.image_url}')">
-        <div class="anime-score">${score}</div>
-        <div class="anime-year">${anime.year || ''}</div>
-        <div class="anime-rank">${rank}</div>
-        <div class="anime-rating">${rating}</div>
+      <div class="anime-img" style="background-image: url('${anime.images.webp.image_url}')">
+        <span>${score}</span>
+        <span class="year">${anime.year || ''}</span>
+        <span class="rank">${rank}</span>
+        <span class="rating">${rating}</span>
       </div>
-      <h3 class="anime-title">${anime.title}</h3>
+      <h4 class="anime-title">${anime.title}</h4>
     `;
   
     //дії
     container.addEventListener('click', () => {
       localStorage.setItem('animeViewing', JSON.stringify(anime));
-      location.href = 'viewing-anime.html';
+      location.href = 'anime-view.html';
     });
     dom[containers].append(container);
     
@@ -160,8 +155,8 @@ function animeFor(animeArray, containers, version) {
 }
 
 
-//топ аніме
-async function sortTopAnime() {
+//top anime
+export async function sortTopAnime() {
   try {
   //server logic
   const animeTopData = await data.serverTopAnime.json();
@@ -170,34 +165,36 @@ async function sortTopAnime() {
   
   //кліентська логіка
   animeFor(animeTop25, 'containerTop10Anime');
-  } catch {
+  } catch (e) {
+    console.error('помилка sortTopAnime', e);
   }
 }
 
 
-//аніме рекомендації
-async function sortAnime() {
+//recommend anime
+export async function sortAnime() {
   try {
   //recommend anime
   const animeData = await data.serverAnime.json();
   const anime = animeData.data;
   let animeRecommend = anime.slice(0, 25);
   
-  //пагінація
+  //pagination
   data.allPaginationPage = animeData.pagination.last_visible_page;
   pagTextContent();
   
   //на сайті
-  animeFor(animeRecommend, 'containerRecommendAmine', 2);
-  } catch {
+  animeFor(animeRecommend, 'containerRecommendAmine');
+  } catch (e) {
+    console.error('помилка sortAnime', e);
   }
 }
 
 
-//старт відображення аніме
+//start відображення anime
 async function startAnime() {
   data.animeSearch = false;
-  paginationDocument = 1;
+  data.paginationPage = 1;
   pagTextContent();
   
   
@@ -216,28 +213,30 @@ async function startAnime() {
 startAnime();
 
 
-//очистить списки аниме
-function clearAnime() {
+//clear anime list
+export function clearAnime() {
   dom.containerTop10Anime.innerHTML = '';
   dom.containerRecommendAmine.innerHTML = '';
 }
 
 
-//очтстити рекомендації аніме
+//clear anime list recommend
 function clearRecommengAnime() {
   dom.containerRecommendAmine.innerHTML = '';
 }
 
 
-//виводимо потрібні дані
-return {
-  //clearRecommengAnime,
-  clearAnime,
-  pagTextContent,
-  sortTopAnime,
-  sortAnime,
-};
-
+//anime wrap row scroll progress
+function animeScrollProgress() {
+  const scrollLeft = dom.containerTop10Anime.scrollLeft;
+  const maxScroll = dom.containerTop10Anime.scrollWidth - dom.containerTop10Anime.clientWidth;
+  if (maxScroll <= 0) return;
+  let percent = scrollLeft / maxScroll;
+  const minPercent = 12.5;
+  const widthPercent = minPercent + percent * (100 - minPercent);
+  html.HTML.style.setProperty('--anime-row-scroll', `${widthPercent}%`);
 }
+animeScrollProgress();
 
-const controls = renderAnimeLists();
+dom.containerTop10Anime.addEventListener('scroll', animeScrollProgress);
+window.addEventListener('resize', animeScrollProgress);
