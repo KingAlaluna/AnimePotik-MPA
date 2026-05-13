@@ -1,10 +1,18 @@
 localStorage.setItem('activeBtn', 'search');
 
 
-await import('../mainLogic.js');
-const {search} = await import('../../data/layout/search.js');
+await import('../main-logic.js');
+const {search} = await import('../../layout/search.js');
 const {html, c, i} = await import('../../data/config.js');
-const {dom: rDom, data, clearAnime, clearFilter, pagTextContent, sortAnime, sortTopAnime} = await import('../renderAnimeLists.js');
+const {
+  dom: rDom,
+  data,
+  clearAnime,
+  clearFilter,
+  pagTextContent,
+  sortAnime,
+  sortTopAnime
+} = await import('../render-anime-lists.js');
 
 
 html.page.insertAdjacentHTML('beforeend', search);

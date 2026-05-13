@@ -1,5 +1,5 @@
 export const animeList = `
-    <section class="top-10-anime">
+    <section class="wrap-top-anime">
       <h3 id="text-top-anime">Топ 25:</h3>
       <div class="wrap-content row" id="container-top-10-anime">
         <!--content add js-->
@@ -9,7 +9,7 @@ export const animeList = `
       </div>
     </section>
     
-    <section class="recommend">
+    <section class="wrap-recommend-anime">
       <h3 id="text-recommend-anime">Рекомендую:</h3>
       <div class="wrap-content" id="container-recommend-amine">
         <!--content add js-->

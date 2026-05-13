@@ -1,6 +1,7 @@
 import '../../sw-init.js';
-import {copyFooter} from '../data/layout/copy-footer.js';
-import {topBanner, bottomNav, btnScrollPage} from '../data/layout/banners.js';
+
+import {copyFooter} from '../layout/copy-footer.js';
+import {topBanner, bottomNav, btnScrollPage} from '../layout/banners.js';
 
 
 //add html elements
@@ -11,7 +12,8 @@ root.insertAdjacentHTML('beforeend', [copyFooter, bottomNav, btnScrollPage].join
 
 const {html} = await import('../data/config.js');
 const {applyTheme} = await import('./themes.js');
-await import('./scrollPages.js');
+await import('./scroll-pages.js');
+await import('./footer-copy.js');
 
 
 //btn active styles

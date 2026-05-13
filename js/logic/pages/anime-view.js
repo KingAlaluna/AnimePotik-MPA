@@ -1,9 +1,9 @@
 localStorage.setItem('activeBtn', 'anime-view');
 
 
-await import('../mainLogic.js');
+await import('../main-logic.js');
 const {html} = await import('../../data/config.js');
-import {animeView} from '../../data/layout/anime-view.js';
+import {animeView} from '../../layout/anime-view.js';
 
 
 //add anime view

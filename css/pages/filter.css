@@ -1,4 +1,4 @@
-.top-10-anime {
+.wrap-top-anime {
   border-top: var(--border);
 }
 
@@ -31,6 +31,6 @@
   }
 }
 
-.top-10-anime {
+.wrap-top-anime {
   margin-top: 1rem;
 }

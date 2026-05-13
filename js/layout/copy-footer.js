@@ -18,44 +18,9 @@ export const copyFooter = `
     
     <h3>Коротка інформація та посилання на інші мої проєкти:</h3>
     
-    <section class="wrap-my-project">
-      <h2>Інші сайти:</h2>
-      
-      <ul>
-        <li>
-          <h3>AnimePotik-SPA (аніме)</h3>
-          <a href="https://kingalaluna.github.io/AnimePotik-SPA/">Перейти на AnimePotik-MPA</a>
-          <a href="https://github.com/KingAlaluna/AnimePotik-SPA.git">Глянути вихідний код</a>
-        </li>
-        <li>
-          <h3>AnimeHub-MPA (аніме)</h3>
-          <a href="https://kingalaluna.github.io/AnimeHub-MPA/">Перейти на AnimeHub-MPA</a>
-          <a href="https://github.com/KingAlaluna/AnimeHub-MPA.git">Глянути вихідний код</a>
-        </li>
-        <li>
-          <h3>AnimeHub-SPA (аніме)</h3>
-          <a href="https://kingalaluna.github.io/AnimeHub-SPA/">Перейти на AnimeHub-SPA</a>
-          <a href="https://github.com/KingAlaluna/AnimeHub-SPA.git">Глянути вихідний код</a>
-        </li>
-      </ul>
-    </section>
-    
-    <section class="wrap-my-project">
-      <h2>Ігри:</h2>
-      
-      <ul>
-        <li>
-          <h3>Flappy UFO-DOM</h3>
-          <a href="https://kingalaluna.github.io/Flappy-UFO-DOM/">Перейти на Flappy UFO-DOM</a>
-          <a href="https://github.com/KingAlaluna/Flappy-UFO-DOM.git">Глянути вихідний код</a>
-        </li>
-        <li>
-          <h3>Dino-DOM</h3>
-          <a href="https://kingalaluna.github.io/Dino-DOM/">Перейти на Dino-DOM</a>
-          <a href="https://github.com/KingAlaluna/Dino-DOM.git">Глянути вихідний код</a>
-        </li>
-      </ul>
-    </section>
+    <div class="all-my-projects-wrap" id="all-my-projects-wrap">
+      <!--content add js-->
+    </div>
 
     
     <h2>Мої контакти:</h2>
@@ -67,7 +32,7 @@ export const copyFooter = `
     </address>
     <div class="copy-wrap">
       <img class="logo" src="img/my-logo/logo.svg" alt="Моє лого">
-      <span>&copy; AnimePotik 2026 | v2.0.0 (MPA).</span>
+      <span>&copy; AnimePotik 2026 | v2.1.0 (MPA).</span>
     </div>
   </footer>
   

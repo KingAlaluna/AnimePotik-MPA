@@ -1,14 +1,40 @@
 :root {
-  --btn-bg: var(--gray-50);
-  --anime-info-span-bg: var(--gray-50);
-  --footer-copy-bg: var(--gray-50);
-  --search-wrap-bg: var(--gray-50);
-  --wrap-scroll-progress-bg: var(--gray-50);
-  --anime-wrap-bg: var(--gray-50);
-  --anime-description-bg: var(--gray-50);
-  --anime-info-wrap-bg: var(--gray-50);
+  /*palette colors*/
+  --white-50: hsla(200, 10%, 99%, 1);
+  --white-100: hsla(200, 10%, 95%, 1);
+  --white-150: hsla(240, 17%, 90%, 1);
   
-  --btn-box-shadow: var(--gray-250);
-  --scroll-progress-box-shadow: var(--gray-250);
+  --black-850: hsla(240, 17%, 10%, 1);
+  --black-900: hsla(240, 10%, 10%, 1);
+  --black-950: hsla(200, 15%, 5%, 1);
+  
+  --grey-250: hsla(200, 10%, 75%, 1);
+  --grey-300: hsla(200, 10%, 70%, 1);
+  --grey-500: hsla(240, 10%, 50%, 1);
+  --grey-600: hsla(240, 10%, 40%, 1);
+  --grey-700: hsla(240, 20%, 30%, 1);
+  
+  --grey-300-a30: hsla(200, 10%, 70%, 0.3);
+  --grey-600-a30: hsla(240, 10%, 40%, 0.3);
+  
+  --red-400: hsla(0, 100%, 60%, 1);
+  --red-600: hsla(0, 100%, 40%, 1);
+  
+  --yellow-400: hsla(60, 100%, 60%, 1);
+  --yellow-700: hsla(50, 100%, 30%, 1);
+  
+  --azure-200: hsla(200, 100%, 80%, 1);
+  
+  --violet-700: hsla(260, 100%, 30%, 1);
+  
+  --magenta-200: hsla(300, 100%, 80%, 1);
+  --magenta-800: hsla(300, 100%, 20%, 1);
+  
+  
+  
+  /*variables*/
+  --main-logo-img-bg: var(--main-logo-gradient);
+  --main-logo-text-color: var(--main-logo-gradient);
   
 }
+

@@ -1,5 +1,5 @@
 import {html} from '../data/config.js';
-import {animeList} from '../data/layout/anime-list.js';
+import {animeList} from '../layout/anime-list.js';
 
 
 //data

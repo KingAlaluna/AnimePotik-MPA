@@ -1,4 +1,4 @@
 localStorage.setItem('activeBtn', 'index');
 
-await import('../mainLogic.js');
-await import('../renderAnimeLists.js');
+await import('../main-logic.js');
+await import('../render-anime-lists.js');

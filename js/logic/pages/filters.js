@@ -1,10 +1,17 @@
 localStorage.setItem('activeBtn', 'filters-anime');
 
 
-await import('../mainLogic.js');
+await import('../main-logic.js');
 const {html} = await import('../../data/config.js');
-const {filtersAnime} = await import('../../data/layout/filters.js');
-const {data, clearFilter, clearAnime, pagTextContent, sortTopAnime, sortAnime} = await import('../renderAnimeLists.js');
+const {filtersAnime} = await import('../../layout/filters.js');
+const {
+  data, 
+  clearFilter, 
+  clearAnime, 
+  pagTextContent, 
+  sortTopAnime, 
+  sortAnime,
+} = await import('../render-anime-lists.js');
 const {allFilter} = await import('../../data/filters.js');
 
 
@@ -19,6 +26,9 @@ const c = (classes) => document.querySelectorAll(`.${classes}`);
 const dom = {
   wrapFilterAnime: c('wrap-filter-anime'),
   btnFilterAnime: c('btn-filter-anime'),
+  
+  textTopAnime: i('text-top-anime'),
+  textRecomendAnime: i('text-recommend-anime'),
 };
 
 
@@ -55,8 +65,8 @@ dom.btnFilterAnime.forEach(e => {
     
     data.anime[type] = filter;
     
-    html.textTopAnime.textContent = `Топ 25 ${text}:`;
-    html.textRecomendAnime.textContent = `Рекомендую ${text}:`;
+    dom.textTopAnime.textContent = `Топ 25 ${text}:`;
+    dom.textRecomendAnime.textContent = `Рекомендую ${text}:`;
     
     data.serverTopAnime = await fetch(`https://api.jikan.moe/v4/anime?${url[type]}&order_by=score&sort=desc`);
     data.serverAnime = await fetch(`https://api.jikan.moe/v4/anime?${url[type]}&page=${encodeURIComponent(data.paginationPage)}`);

@@ -1,4 +1,4 @@
-.top-10-anime {
+.wrap-top-anime {
   width: 100%;
   height: max-content;
   display: flex;
@@ -24,7 +24,7 @@
   }
 }
 
-.recommend {
+.wrap-recommend-anime {
   width: 100%;
   height: max-content;
   display: flex;
