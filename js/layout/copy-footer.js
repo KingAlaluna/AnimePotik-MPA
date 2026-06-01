@@ -32,7 +32,7 @@ export const copyFooter = `
     </address>
     <div class="copy-wrap">
       <img class="logo" src="img/my-logo/logo.svg" alt="Моє лого">
-      <span>&copy; AnimePotik 2026 | v2.1.0 (MPA).</span>
+      <span>&copy; AnimePotik 2026 | v2.2.0 (MPA).</span>
     </div>
   </footer>
   
